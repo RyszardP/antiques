@@ -3,11 +3,11 @@ package com.ryszard.domain.jdbc;
 import java.util.Objects;
 
 public class ProductOwner {
-    public Long ProductOwnerId;
+    private Long ProductOwnerId;
 
-    public Long ProductId;
+    private Long ProductId;
 
-    public Long OwnerId;
+    private Long OwnerId;
 
     public ProductOwner(Long productOwnerId, Long productId, Long ownerId) {
         ProductOwnerId = productOwnerId;

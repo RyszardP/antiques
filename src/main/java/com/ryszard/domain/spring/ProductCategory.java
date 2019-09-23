@@ -6,24 +6,24 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import java.util.Objects;
 
 public class ProductCategory {
-    private Long productCategoyId;
+    private Long productCategoryId;
 
     private Long productId;
 
     private Long categoryId;
 
     public ProductCategory(Long productCategoyId, Long productId, Long categoryId) {
-        this.productCategoyId = productCategoyId;
+        this.productCategoryId = productCategoyId;
         this.productId = productId;
         this.categoryId = categoryId;
     }
 
     public Long getProductCategoyId() {
-        return productCategoyId;
+        return productCategoryId;
     }
 
     public void setProductCategoyId(Long productCategoyId) {
-        this.productCategoyId = productCategoyId;
+        this.productCategoryId = productCategoyId;
     }
 
     public Long getProductId() {
@@ -47,14 +47,14 @@ public class ProductCategory {
         if (this == o) return true;
         if (!(o instanceof ProductCategory)) return false;
         ProductCategory that = (ProductCategory) o;
-        return Objects.equals(productCategoyId, that.productCategoyId) &&
+        return Objects.equals(productCategoryId, that.productCategoryId) &&
                 Objects.equals(productId, that.productId) &&
                 Objects.equals(categoryId, that.categoryId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(productCategoyId, productId, categoryId);
+        return Objects.hash(productCategoryId, productId, categoryId);
     }
 
     @Override
