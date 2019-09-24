@@ -12,6 +12,9 @@ public class ProductCategory {
 
     private Long categoryId;
 
+    public ProductCategory() {
+    }
+
     public ProductCategory(Long productCategoyId, Long productId, Long categoryId) {
         this.productCategoryId = productCategoyId;
         this.productId = productId;

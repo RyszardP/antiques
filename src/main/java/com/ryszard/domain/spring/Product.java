@@ -16,6 +16,9 @@ public class Product {
 
     private String description;
 
+    public Product() {
+    }
+
     public Long getProductId() {
         return productId;
     }

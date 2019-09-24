@@ -14,6 +14,17 @@ public class Product {
 
     private String description;
 
+    public Product() {
+    }
+
+    public Product(Long productId, String productName, String state, Long year, String description) {
+        this.productId = productId;
+        this.productName = productName;
+        this.state = state;
+        this.year = year;
+        this.description = description;
+    }
+
     public Long getProductId() {
         return productId;
     }

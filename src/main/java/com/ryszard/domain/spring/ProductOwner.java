@@ -12,6 +12,9 @@ public class ProductOwner {
 
     private Long OwnerId;
 
+    public ProductOwner() {
+    }
+
     public ProductOwner(Long productOwnerId, Long productId, Long ownerId) {
         ProductOwnerId = productOwnerId;
         ProductId = productId;

@@ -16,6 +16,9 @@ public class Owner {
 
     private String ownerPhone;
 
+    public Owner() {
+    }
+
     public Owner(Long ownerId, String ownerName, String ownerSurname, String ownerAdress, String ownerEmail, String ownerPhone) {
         this.ownerId = ownerId;
         this.ownerName = ownerName;

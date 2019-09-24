@@ -9,8 +9,11 @@ public class ProductCategory {
 
     private Long categoryId;
 
-    public ProductCategory(Long productCategoyId, Long productId, Long categoryId) {
-        this.productCategoryId = productCategoyId;
+    public ProductCategory() {
+    }
+
+    public ProductCategory(Long productCategoryId, Long productId, Long categoryId) {
+        this.productCategoryId = productCategoryId;
         this.productId = productId;
         this.categoryId = categoryId;
     }
