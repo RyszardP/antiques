@@ -2,7 +2,9 @@ package com.ryszard;
 
 import com.ryszard.config.AppConfig;
 import com.ryszard.domain.jdbc.Category;
+import com.ryszard.domain.jdbc.Owner;
 import com.ryszard.repository.CategoryDao;
+import com.ryszard.repository.OwnerDao;
 import com.ryszard.repository.impl.CategoryDaoImpl;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -14,8 +16,12 @@ public class Main {
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
 
         CategoryDao categoryDao = (CategoryDao) context.getBean("categoryDaoImpl");
+        OwnerDao ownerDao = (OwnerDao) context.getBean("ownerDaoImpl");
 
         List<Category> categories = categoryDao.findAll();
-        System.out.println(categories);
+        //System.out.println(categories);
+
+        List<Owner> owners = ownerDao.findAll();
+        System.out.println(owners);
     }
 }

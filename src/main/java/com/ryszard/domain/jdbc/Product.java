@@ -84,7 +84,7 @@ public class Product {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("Product{");
+        final StringBuilder sb = new StringBuilder("ProductDao{");
         sb.append("productId=").append(productId);
         sb.append(", productName='").append(productName).append('\'');
         sb.append(", state='").append(state).append('\'');

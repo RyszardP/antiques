@@ -4,6 +4,7 @@ import com.ryszard.domain.jdbc.Category;
 import com.ryszard.repository.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,9 +17,9 @@ import java.util.List;
 @Transactional
 public class CategoryDaoImpl implements CategoryDao {
 
-    public  static final String CATEGORY_ID = "category_id";
-    public  static final String CATEGORY_NAME = "category_name";
-    public  static final String CATEGORY_DESCRIPTION = "category_description";
+    public static final String CATEGORY_ID = "category_id";
+    public static final String CATEGORY_NAME = "category_name";
+    public static final String CATEGORY_DESCRIPTION = "category_description";
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
@@ -42,7 +43,10 @@ public class CategoryDaoImpl implements CategoryDao {
 
     @Override
     public Category findById(Long id) {
-        return null;
+        final String findById = "select * from category where category_id = :categoryId";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("sectorId", id);
+        return namedParameterJdbcTemplate.queryForObject(findById, params, this::getCategoryRowMapper);
     }
 
     @Override
