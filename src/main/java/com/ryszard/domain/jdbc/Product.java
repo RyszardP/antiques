@@ -5,13 +5,9 @@ import java.util.Objects;
 
 public class Product {
     private Long productId;
-
     private String productName;
-
     private String state;
-
     private Long year;
-
     private String description;
 
     public Product() {

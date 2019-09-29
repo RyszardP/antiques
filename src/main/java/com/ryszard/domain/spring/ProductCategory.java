@@ -7,9 +7,7 @@ import java.util.Objects;
 
 public class ProductCategory {
     private Long productCategoryId;
-
     private Long productId;
-
     private Long categoryId;
 
     public ProductCategory() {

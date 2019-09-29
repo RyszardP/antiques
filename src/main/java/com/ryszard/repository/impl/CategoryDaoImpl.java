@@ -6,12 +6,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.Objects;
 
 @Repository
 @Transactional
@@ -38,34 +41,56 @@ public class CategoryDaoImpl implements CategoryDao {
     @Override
     public List<Category> findAll() {
         final String findAllQuery = "select * from category";
-        return namedParameterJdbcTemplate.query(findAllQuery,this::getCategoryRowMapper);
+        return namedParameterJdbcTemplate.query(findAllQuery, this::getCategoryRowMapper);
     }
 
     @Override
     public Category findById(Long id) {
         final String findById = "select * from category where category_id = :categoryId";
         MapSqlParameterSource params = new MapSqlParameterSource();
-        params.addValue("sectorId", id);
+        params.addValue("categoryId", id);
         return namedParameterJdbcTemplate.queryForObject(findById, params, this::getCategoryRowMapper);
     }
 
     @Override
     public void delete(Long id) {
-
+        final String delete = "delete * from category where category_id = :categoryId";
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("categoryId", id);
+        namedParameterJdbcTemplate.update(delete, params);
     }
 
     @Override
     public Category save(Category entity) {
-        return null;
+        final String createQuery = "INSERT INTO category(category_id, category_name, category_description)" +
+                "VALUES (:categoryId, :categoryName, :categoryDescription);";
+        KeyHolder keyHolder = new GeneratedKeyHolder();
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("categoryId", entity.getCategoryId());
+        params.addValue("categoryName", entity.getCategoryName());
+        params.addValue("categoryDescription", entity.getCategoryDescription());
+        namedParameterJdbcTemplate.update(createQuery,params,keyHolder);
+        long createdCategoryId= Objects.requireNonNull(keyHolder.getKey()).longValue();
+        return findById(createdCategoryId);
     }
 
     @Override
     public Category update(Category entity) {
-        return null;
+        final String createQuery = "UPDATE category set category_name = :categoryName, category_description =:categoryDescription";
+
+        MapSqlParameterSource params = new MapSqlParameterSource();
+        params.addValue("categoryName", entity.getCategoryName());
+        params.addValue("categoryDescription", entity.getCategoryDescription());
+        namedParameterJdbcTemplate.update(createQuery, params);
+        return findById(entity.getCategoryId());
     }
 
     @Override
     public List<Category> search(Category entity) {
+
         return null;
     }
+
+
 }

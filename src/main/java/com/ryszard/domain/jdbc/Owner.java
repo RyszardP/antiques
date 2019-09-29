@@ -5,15 +5,10 @@ import java.util.Objects;
 
 public class Owner {
     private Long ownerId;
-
     private String ownerName;
-
     private String ownerSurname;
-
     private String ownerAddress;
-
     private String ownerEmail;
-
     private String ownerPhone;
 
     public Owner() {
@@ -52,7 +47,7 @@ public class Owner {
         this.ownerSurname = ownerSurname;
     }
 
-    public String getOwnerAdress() {
+    public String getOwnerAddress() {
         return ownerAddress;
     }
 

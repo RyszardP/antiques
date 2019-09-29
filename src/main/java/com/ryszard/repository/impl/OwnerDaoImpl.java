@@ -42,8 +42,8 @@ public class OwnerDaoImpl implements OwnerDao {
 
     @Override
     public List<Owner> findAll() {
-        final String findallQuerry = "select * from owner";
-                return namedParameterJdbcTemplate.query(findallQuerry, this::getOwnerRowMapper);
+        final String findAllQuery = "select * from owner";
+                return namedParameterJdbcTemplate.query(findAllQuery, this::getOwnerRowMapper);
     }
 
     @Override

@@ -3,17 +3,28 @@ package com.ryszard.domain.spring;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name="product")
 public class Product {
+
+    @Id
+    @GeneratedValue
+    @Column(name="product_id")
     private Long productId;
 
+    @Column(name = "product_name")
     private String productName;
 
+    @Column(name="product_state")
     private String state;
 
+    @Column(name="year")
     private Long year;
 
+    @Column(name="description")
     private String description;
 
     public Product() {

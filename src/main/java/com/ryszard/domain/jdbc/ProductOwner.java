@@ -4,9 +4,7 @@ import java.util.Objects;
 
 public class ProductOwner {
     private Long ProductOwnerId;
-
     private Long ProductId;
-
     private Long OwnerId;
 
     public ProductOwner() {

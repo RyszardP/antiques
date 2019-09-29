@@ -4,9 +4,7 @@ import java.util.Objects;
 
 public class Category {
  private Long categoryId;
-
  private String categoryName;
-
  private String categoryDescription;
 
     public Category() {

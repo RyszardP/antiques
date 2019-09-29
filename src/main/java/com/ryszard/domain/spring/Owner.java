@@ -5,25 +5,20 @@ import java.util.Objects;
 
 public class Owner {
     private Long ownerId;
-
     private String ownerName;
-
     private String ownerSurname;
-
-    private String ownerAdress;
-
+    private String ownerAddress;
     private String ownerEmail;
-
     private String ownerPhone;
 
     public Owner() {
     }
 
-    public Owner(Long ownerId, String ownerName, String ownerSurname, String ownerAdress, String ownerEmail, String ownerPhone) {
+    public Owner(Long ownerId, String ownerName, String ownerSurname, String ownerAddress, String ownerEmail, String ownerPhone) {
         this.ownerId = ownerId;
         this.ownerName = ownerName;
         this.ownerSurname = ownerSurname;
-        this.ownerAdress = ownerAdress;
+        this.ownerAddress = ownerAddress;
         this.ownerEmail = ownerEmail;
         this.ownerPhone = ownerPhone;
     }
@@ -52,12 +47,12 @@ public class Owner {
         this.ownerSurname = ownerSurname;
     }
 
-    public String getOwnerAdress() {
-        return ownerAdress;
+    public String getOwnerAddress() {
+        return ownerAddress;
     }
 
-    public void setOwnerAdress(String ownerAdress) {
-        this.ownerAdress = ownerAdress;
+    public void setOwnerAddress(String ownerAddress) {
+        this.ownerAddress = ownerAddress;
     }
 
     public String getOwnerEmail() {
@@ -84,7 +79,7 @@ public class Owner {
         return Objects.equals(ownerId, owner.ownerId) &&
                 Objects.equals(ownerName, owner.ownerName) &&
                 Objects.equals(ownerSurname, owner.ownerSurname) &&
-                Objects.equals(ownerAdress, owner.ownerAdress) &&
+                Objects.equals(ownerAddress, owner.ownerAddress) &&
                 Objects.equals(ownerEmail, owner.ownerEmail) &&
                 Objects.equals(ownerPhone, owner.ownerPhone);
     }
@@ -92,7 +87,7 @@ public class Owner {
 
     @Override
     public int hashCode() {
-        return Objects.hash(ownerId, ownerName, ownerSurname, ownerAdress, ownerEmail, ownerPhone);
+        return Objects.hash(ownerId, ownerName, ownerSurname, ownerAddress, ownerEmail, ownerPhone);
     }
 
     @Override
