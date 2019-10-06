@@ -1,7 +1,7 @@
-package com.ryszard.repository.impl;
+package com.ryszard.repository.jdbc.impl;
 
 import com.ryszard.domain.jdbc.ProductCategory;
-import com.ryszard.repository.ProductCategoryDao;
+import com.ryszard.repository.jdbc.ProductCategoryDao;
 
 import java.util.List;
 

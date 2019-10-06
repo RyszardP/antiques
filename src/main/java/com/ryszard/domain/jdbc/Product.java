@@ -3,6 +3,7 @@ package com.ryszard.domain.jdbc;
 
 import java.util.Objects;
 
+
 public class Product {
     private Long productId;
     private String productName;

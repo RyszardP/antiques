@@ -3,64 +3,64 @@ package com.ryszard.domain.jdbc;
 import java.util.Objects;
 
 public class ProductOwner {
-    private Long ProductOwnerId;
-    private Long ProductId;
-    private Long OwnerId;
+    private Long productOwnerId;
+    private Long productId;
+    private Long ownerId;
 
     public ProductOwner() {
     }
 
     public ProductOwner(Long productOwnerId, Long productId, Long ownerId) {
-        ProductOwnerId = productOwnerId;
-        ProductId = productId;
-        OwnerId = ownerId;
+        this.productOwnerId = productOwnerId;
+        this.productId = productId;
+        this.ownerId = ownerId;
     }
 
     public Long getProductOwnerId() {
-        return ProductOwnerId;
+        return productOwnerId;
     }
 
     public void setProductOwnerId(Long productOwnerId) {
-        ProductOwnerId = productOwnerId;
+        this.productOwnerId = productOwnerId;
     }
 
     public Long getProductId() {
-        return ProductId;
+        return productId;
     }
 
     public void setProductId(Long productId) {
-        ProductId = productId;
+        this.productId = productId;
     }
 
     public Long getOwnerId() {
-        return OwnerId;
+        return ownerId;
     }
 
     public void setOwnerId(Long ownerId) {
-        OwnerId = ownerId;
+        this.ownerId = ownerId;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (!(o instanceof ProductOwner)) return false;
         ProductOwner that = (ProductOwner) o;
-        return Objects.equals(ProductOwnerId, that.ProductOwnerId) &&
-                Objects.equals(ProductId, that.ProductId) &&
-                Objects.equals(OwnerId, that.OwnerId);
+        return Objects.equals(productOwnerId, that.productOwnerId) &&
+                Objects.equals(productId, that.productId) &&
+                Objects.equals(ownerId, that.ownerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ProductOwnerId, ProductId, OwnerId);
+        return Objects.hash(productOwnerId, productId, ownerId);
     }
+
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("ProductOwner{");
-        sb.append("ProductOwnerId=").append(ProductOwnerId);
-        sb.append(", ProductId=").append(ProductId);
-        sb.append(", OwnerId=").append(OwnerId);
+        sb.append("productOwnerId=").append(productOwnerId);
+        sb.append(", productId=").append(productId);
+        sb.append(", ownerId=").append(ownerId);
         sb.append('}');
         return sb.toString();
     }

@@ -4,10 +4,10 @@ import com.ryszard.config.AppConfig;
 import com.ryszard.domain.jdbc.Category;
 import com.ryszard.domain.jdbc.Owner;
 import com.ryszard.domain.jdbc.Product;
-import com.ryszard.repository.CategoryDao;
-import com.ryszard.repository.OwnerDao;
-import com.ryszard.repository.ProductDao;
-import com.ryszard.repository.impl.CategoryDaoImpl;
+import com.ryszard.repository.jdbc.CategoryDao;
+import com.ryszard.repository.jdbc.OwnerDao;
+import com.ryszard.repository.jdbc.ProductDao;
+import com.ryszard.repository.jdbc.impl.CategoryDaoImpl;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 

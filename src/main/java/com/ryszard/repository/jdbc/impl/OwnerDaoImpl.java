@@ -1,7 +1,7 @@
-package com.ryszard.repository.impl;
+package com.ryszard.repository.jdbc.impl;
 
 import com.ryszard.domain.jdbc.Owner;
-import com.ryszard.repository.OwnerDao;
+import com.ryszard.repository.jdbc.OwnerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;

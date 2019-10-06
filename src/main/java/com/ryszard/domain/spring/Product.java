@@ -11,14 +11,14 @@ import java.util.Objects;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="product_id")
     private Long productId;
 
     @Column(name = "product_name")
     private String productName;
 
-    @Column(name="product_state")
+    @Column(name="state")
     private String state;
 
     @Column(name="year")
@@ -28,6 +28,13 @@ public class Product {
     private String description;
 
     public Product() {
+    }
+
+    public Product(String productName, String state, Long year, String description) {
+        this.productName = productName;
+        this.state = state;
+        this.year = year;
+        this.description = description;
     }
 
     public Long getProductId() {
@@ -81,6 +88,7 @@ public class Product {
                 Objects.equals(year, product.year) &&
                 Objects.equals(description, product.description);
     }
+
 
     @Override
     public int hashCode() {

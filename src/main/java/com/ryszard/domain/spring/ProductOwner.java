@@ -3,44 +3,46 @@ package com.ryszard.domain.spring;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import java.util.Objects;
 
+@Entity
+@Table(name = "product_owner")
 public class ProductOwner {
-    private Long ProductOwnerId;
-    private Long ProductId;
-    private Long OwnerId;
+    private Long productOwnerId;
+    private Long productId;
+
+    @Column(name="owner_id")
+    private Long ownerId;
 
     public ProductOwner() {
     }
 
-    public ProductOwner(Long productOwnerId, Long productId, Long ownerId) {
-        ProductOwnerId = productOwnerId;
-        ProductId = productId;
-        OwnerId = ownerId;
-    }
 
     public Long getProductOwnerId() {
-        return ProductOwnerId;
+        return productOwnerId;
     }
 
     public void setProductOwnerId(Long productOwnerId) {
-        ProductOwnerId = productOwnerId;
+        this.productOwnerId = productOwnerId;
     }
 
     public Long getProductId() {
-        return ProductId;
+        return productId;
     }
 
     public void setProductId(Long productId) {
-        ProductId = productId;
+        this.productId = productId;
     }
 
     public Long getOwnerId() {
-        return OwnerId;
+        return ownerId;
     }
 
     public void setOwnerId(Long ownerId) {
-        OwnerId = ownerId;
+        this.ownerId = ownerId;
     }
 
     @Override
@@ -48,14 +50,14 @@ public class ProductOwner {
         if (this == o) return true;
         if (!(o instanceof ProductOwner)) return false;
         ProductOwner that = (ProductOwner) o;
-        return Objects.equals(ProductOwnerId, that.ProductOwnerId) &&
-                Objects.equals(ProductId, that.ProductId) &&
-                Objects.equals(OwnerId, that.OwnerId);
+        return Objects.equals(productOwnerId, that.productOwnerId) &&
+                Objects.equals(productId, that.productId) &&
+                Objects.equals(ownerId, that.ownerId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(ProductOwnerId, ProductId, OwnerId);
+        return Objects.hash(productOwnerId, productId, ownerId);
     }
 
     @Override

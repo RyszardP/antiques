@@ -3,11 +3,22 @@ package com.ryszard.domain.spring;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name = "product_category")
 public class ProductCategory {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name = "product_category_id")
     private Long productCategoryId;
+
+    @Column(name = "product_id")
     private Long productId;
+
+    @Column(name = "category_id")
     private Long categoryId;
 
     public ProductCategory() {

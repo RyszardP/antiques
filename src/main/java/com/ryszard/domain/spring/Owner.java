@@ -1,14 +1,32 @@
 package com.ryszard.domain.spring;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
+@Table(name="owner")
 public class Owner {
+
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="owner_id")
     private Long ownerId;
+
+    @Column(name = "owner_name")
     private String ownerName;
+
+    @Column(name = "owner_surname")
     private String ownerSurname;
+
+    @Column(name = "owner_address")
     private String ownerAddress;
+
+    @Column(name = "owner_email")
     private String ownerEmail;
+
+    @Column(name = "owner_phone")
     private String ownerPhone;
 
     public Owner() {

@@ -2,7 +2,7 @@ package com.ryszard;
 
 import com.ryszard.config.DatabaseConfig;
 import com.ryszard.config.JdbcTemplateConfig;
-import com.ryszard.config.SwaggerConfig;
+import com.ryszard.config.swagger.SwaggerConfig;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;

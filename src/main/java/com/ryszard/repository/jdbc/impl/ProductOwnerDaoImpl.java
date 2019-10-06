@@ -1,7 +1,7 @@
-package com.ryszard.repository.impl;
+package com.ryszard.repository.jdbc.impl;
 
 import com.ryszard.domain.jdbc.ProductOwner;
-import com.ryszard.repository.ProductOwnerDao;
+import com.ryszard.repository.jdbc.ProductOwnerDao;
 
 import java.util.List;
 

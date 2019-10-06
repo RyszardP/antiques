@@ -1,7 +1,7 @@
-package com.ryszard.repository.impl;
+package com.ryszard.repository.jdbc.impl;
 
 import com.ryszard.domain.jdbc.Category;
-import com.ryszard.repository.CategoryDao;
+import com.ryszard.repository.jdbc.CategoryDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.MapSqlParameterSource;

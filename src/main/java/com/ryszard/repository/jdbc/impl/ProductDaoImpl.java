@@ -1,7 +1,7 @@
-package com.ryszard.repository.impl;
+package com.ryszard.repository.jdbc.impl;
 
 import com.ryszard.domain.jdbc.Product;
-import com.ryszard.repository.ProductDao;
+import com.ryszard.repository.jdbc.ProductDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
