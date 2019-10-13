@@ -1,4 +1,5 @@
 package com.ryszard.domain.spring;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
@@ -12,21 +13,27 @@ public class Owner {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="owner_id")
+    @JsonProperty("owner id")
     private Long ownerId;
 
     @Column(name = "owner_name")
+    @JsonProperty("owner name")
     private String ownerName;
 
     @Column(name = "owner_surname")
+    @JsonProperty("owner surname")
     private String ownerSurname;
 
     @Column(name = "owner_address")
+    @JsonProperty("owner address")
     private String ownerAddress;
 
     @Column(name = "owner_email")
+    @JsonProperty("owner email")
     private String ownerEmail;
 
     @Column(name = "owner_phone")
+    @JsonProperty("owner phone")
     private String ownerPhone;
 
     public Owner() {
@@ -88,6 +95,8 @@ public class Owner {
     public void setOwnerPhone(String ownerPhone) {
         this.ownerPhone = ownerPhone;
     }
+
+
 
     @Override
     public boolean equals(Object o) {

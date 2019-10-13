@@ -1,3 +1,4 @@
+/*
 package com.ryszard;
 
 import com.ryszard.config.DatabaseConfig;
@@ -84,3 +85,4 @@ public class SpringBootApp extends SpringBootServletInitializer {
     }
 }
 
+*/
